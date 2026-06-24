@@ -1,62 +1,61 @@
-# EcoRoute - Sustainability Decision Support System
+# EcoRoute
 
-EcoRoute is a decision support system developed for the **IBM SkillsBuild / 1M1B AI for Sustainability** hackathon. It helps campus students and municipal residents dispose of difficult-to-recycle packaging waste (like chips packets, biscuit wrappers, and shampoo sachets) responsibly.
+### Agentic Sustainability Decision Support System for Responsible Packaging Disposal
 
-Instead of returning generic advice, EcoRoute uses a **Single-Agent Reasoning Workflow** and **Retrieval-Augmented Generation (RAG)** over local sustainability databases (campus drives, brand take-back programs, municipal waste guides) to output verified, actionable instructions.
+## Why EcoRoute?
 
----
+The idea started with a simple observation: most people are willing to dispose of waste responsibly, but they often do not know which option is actually correct for their local area.
 
-## 🌟 Key Features
+Many difficult-to-recycle packaging materials such as chips packets, laminated wrappers, and shampoo sachets are usually mixed with regular waste because people lack clear local guidance.
 
-1.  **Multi-layer Plastic Classification**: Automatically distinguishes Category A (difficult packaging) from Category B (standard recyclable) and Category C (hazardous/out-of-scope).
-2.  **Local Knowledge Base RAG**: Connects user queries to localized sustainability documents.
-3.  **Strict Preference Hierarchy**: Automatically steers users toward active community collection drives and brand take-back incentives before falling back to municipal waste bins.
-4.  **Temporal Validation**: Ignores expired programs and automatically redirects routing.
-5.  **Responsible AI Verification**: Double-checks the draft output against raw documents to prevent hallucinations of addresses, NGO names, schedules, or carbon savings.
-6.  **Transparent Confidence Levels**: High, Medium, or Low tags that clearly detail the completeness of the retrieved information.
+EcoRoute bridges that information gap by combining local sustainability documents with an AI reasoning workflow that produces simple, location-aware recommendations.
 
----
+## How It Works
 
-## 📁 Repository Structure
+EcoRoute combines a single-agent reasoning workflow with a local RAG knowledge base. Rather than returning generic recycling advice, it checks available campus and municipal guidance and recommends a practical next step supported by verified information.
 
-```text
-EcoRoute/
-├── .agents/
-│   └── AGENTS.md                  # Workspace system prompt & rules
-├── agent_system/
-│   ├── AGENTS.md                  # Copy of agent system prompt & rules
-│   ├── agent_workflow.md          # State machine and evaluation logic
-│   ├── system_prompts.md          # Sub-agent prompts (Observation, Classification)
-│   ├── example_prompts.md         # Example user queries
-│   └── demo_conversations.md      # Simulated conversation transcripts
-├── knowledge_base/
-│   ├── municipal_waste_guide.json        # Prototype Municipal Zone waste rules
-│   ├── campus_sustainability_guide.json  # Prototype Campus collection drives
-│   └── brand_takeback_directory.json     # Retailer incentive programs
-├── ui/
-│   ├── index.html                 # Interactive prototype web interface
-│   ├── style.css                  # Custom styling (Outfit font, dark mode, utilities)
-│   └── app.js                     # RAG & Single-Agent simulation logic
-├── ARCHITECTURE.md                # System components & pipeline
-├── FUTURE_IMPROVEMENTS.md         # Future enhancements & scaling roadmap
-├── RESPONSIBLE_AI.md              # Safety policies & hallucination prevention
-├── TEST_CASES.md                  # QA testing matrix & validation checks
-├── PRESENTATION.md                # Slide deck content and pitch script
-└── README.md                      # Project overview (this file)
-```
+## Key Features
 
----
+• Single-Agent Reasoning Workflow
 
-## 🚀 Running the Prototype UI Locally
+Processes user inputs through structured observation, classification, retrieval, verification, and recommendation steps.
 
-The repository includes a complete, interactive, high-fidelity web dashboard that simulates the EcoRoute workflow.
+• Local RAG Integration
 
-To run the UI:
-1.  Navigate to the `ui/` directory.
-2.  Double-click [index.html](file:///E:/EcoRoute/ui/index.html) to open it in any modern web browser (optimized for Chrome, Firefox, Edge, and Safari).
-3.  Choose an item description from the dropdown or type a custom item (e.g. *CrunchTime Chips Packet* or *PureGlow Lotion Sachet*).
-4.  Select a location context (e.g. *Prototype Campus* or *Prototype Municipal Zone*).
-5.  Click **Analyze Packaging** and observe the live reasoning trace, RAG documents retrieved, and final formatted output.
+Retrieves disposal rules from campus and municipal documents instead of relying on generic AI memory.
 
-*Note: The prototype runs entirely client-side (offline-first) with zero network dependency, making it easy to test instantly in any sandbox environment.*
+• Temporal Validation
 
+Checks whether collection drives or take-back programs are still active before recommending them and automatically falls back to municipal guidance when needed.
+
+• Responsible AI Safeguards
+
+Refuses to invent NGOs, addresses, schedules, carbon savings, or unsupported statistics. Every recommendation includes a source reference and confidence level.
+
+## Built With
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- JSON Knowledge Base
+- Prompt Engineering
+- Retrieval-Augmented Generation (Prototype)
+- Responsible AI Principles
+
+## Repository
+
+The repository includes an interactive web prototype that demonstrates the EcoRoute reasoning workflow and local RAG retrieval process.
+
+The prototype runs entirely client-side using local JSON knowledge documents, making it lightweight and easy to explore without external services.
+
+## Prototype Notice
+
+EcoRoute is an educational prototype created for the IBM SkillsBuild and 1M1B AI for Sustainability program.
+
+The included knowledge base contains demonstration data designed to showcase the reasoning workflow and Responsible AI safeguards.
+
+## SDG Alignment
+
+Primary: SDG 12 – Responsible Consumption and Production
+
+Secondary: SDG 11 – Sustainable Cities and Communities
