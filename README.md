@@ -53,7 +53,10 @@ The repository includes a complete, interactive, high-fidelity web dashboard tha
 
 To run the UI:
 1.  Navigate to the `ui/` directory.
-2.  Double-click [index.html](file:///E:/EcoRoute/ui/index.html) to open it in any modern web browser.
+2.  Double-click [index.html](file:///E:/EcoRoute/ui/index.html) to open it in any modern web browser (optimized for Chrome, Firefox, Edge, and Safari).
 3.  Choose an item description from the dropdown or type a custom item (e.g. *CrunchTime Chips Packet* or *PureGlow Lotion Sachet*).
 4.  Select a location context (e.g. *Prototype Campus* or *Prototype Municipal Zone*).
 5.  Click **Analyze Packaging** and observe the live reasoning trace, RAG documents retrieved, and final formatted output.
+
+*Note: The prototype runs entirely client-side (offline-first) with zero network dependency, making it easy to test instantly in any sandbox environment.*
+
