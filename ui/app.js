@@ -149,6 +149,14 @@ async function executeSingleAgentWorkflow() {
   accordionArrow.textContent = "▼";
 
   // 1. Observe Packaging
+  const imageUpload = document.getElementById("image-upload");
+  const observeStep = document.querySelector("#reasoning-content .reasoning-step:first-child");
+  if (imageUpload && imageUpload.files && imageUpload.files.length > 0) {
+    observeStep.innerHTML = '<span class="check-icon">✓</span> Item observed, visual inputs processed, and physical details identified';
+  } else {
+    observeStep.innerHTML = '<span class="check-icon">✓</span> Item observed and physical details identified';
+  }
+  
   const textLower = itemText.toLowerCase();
   let material = "flexible composite";
   let packaging = "wrapper";
