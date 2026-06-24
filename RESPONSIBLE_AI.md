@@ -11,6 +11,7 @@ This document outlines the safety guardrails, hallucination prevention strategie
     2.  **Safety Precautions**: Use protective gloves if the item is leaking or damaged.
     3.  **Local Municipal Ward Hazardous Drop-off**: Direct the user to local ward-level hazard waste centers.
 -   **No Guessing**: The system will never guess if a chemical container is safe. It defaults to the hazardous routing pathway.
+-   **Medical Packaging Safety**: Medical blister packs and syringes are categorized as Category C. They are strictly routed to health center collection bins or pharmacy programs rather than standard plastic or dry waste municipal bins to prevent bio-hazard contamination.
 
 ## 2. Hallucination Prevention & Retrieval-Grounding
 
@@ -30,4 +31,4 @@ EcoRoute enforces strict restrictions on text generation to maintain factual acc
 ## 4. Temporal Validation Sentry
 
 -   **Stale Data Prevention**: Sustainability initiatives, particularly campus drives and brand promotions, have fixed campaign periods.
--   **Grounding Policy**: EcoRoute implements temporal checking. Any retrieved record marked as `EXPIRED` or whose validation date is past the current system clock is disqualified, forcing the reasoning engine to fallback to permanent municipal services.
+-   **Grounding Policy**: EcoRoute implements temporal checking. Any retrieved record marked as `EXPIRED` (such as the campus winter clothing drive after February 28, 2026) or whose validation date is past the current system clock is disqualified, forcing the reasoning engine to route the item to permanent municipal services or recommend safe temporary storage.
