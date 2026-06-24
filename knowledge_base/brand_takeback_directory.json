@@ -1,0 +1,26 @@
+{
+  "source_name": "National Brand Take-Back Program Directory (2026)",
+  "authority": "Circular Packaging coalition",
+  "last_updated": "2026-02-10",
+  "jurisdiction": "National drop-off locations",
+  "programs": [
+    {
+      "brand_partner": "PureGlow Cosmetics",
+      "eligible_packaging": ["Shampoo sachets", "Conditioner sachets", "Lotion tubes", "Cosmetic pouches"],
+      "program_name": "PureGlow Refuse-to-Waste Program",
+      "dropoff_locations": ["All standalone PureGlow retail outlets (Customer Service Desk)"],
+      "incentive": "10% coupon per 10 sachets returned",
+      "instructions": "Sachets must be clean, dry, and cut open. Sent to partner for high-grade chemical recycling.",
+      "website": "https://www.pureglow.com/sustainability/takeback"
+    },
+    {
+      "brand_partner": "CrunchTime Foods",
+      "eligible_packaging": ["CrunchTime Chips Packets", "CrunchTime Tortilla Bags", "CrunchTime Pretzel Bags"],
+      "program_name": "CrunchTime Bag Reclamation Initiative",
+      "dropoff_locations": ["Participating organic grocery stores and community co-ops"],
+      "incentive": "Eco-points redeemable online",
+      "instructions": "Empty all crumbs. Flatten and stack packets before drop-off.",
+      "website": "https://www.crunchtimefoods.com/recycle"
+    }
+  ]
+}

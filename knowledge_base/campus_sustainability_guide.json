@@ -1,0 +1,38 @@
+{
+  "source_name": "Prototype Campus Sustainability Initiative Guide (Spring 2026)",
+  "authority": "Prototype Campus Sustainability Office & Eco-Club Coalition",
+  "last_updated": "2026-03-01",
+  "jurisdiction": "Prototype Campus Grounds",
+  "drives": [
+    {
+      "drive_name": "Eco-Club Flexible Plastics Collection Drive",
+      "target_materials": ["Multi-layer plastic packaging", "Chip packets", "Candy wrappers", "Sachets", "Bubble wrap"],
+      "status": "ACTIVE",
+      "valid_until": "2026-06-30",
+      "collection_point": "Student Sustainability Hub, Room 102",
+      "schedule": "Every Thursday, 2:00 PM to 5:00 PM",
+      "instructions": "Ensure packaging is empty, washed clean, and dry. Collected plastics are sent to a regional recycler to make plastic lumber.",
+      "contact": "sustainability-office@prototype-campus.edu"
+    },
+    {
+      "drive_name": "Standard Beverage Bottle Reclamation",
+      "target_materials": ["PET bottles", "Aluminium cans"],
+      "status": "ACTIVE",
+      "valid_until": "2026-12-31",
+      "collection_point": "Reverse Vending Machines (RVMs) at Dining Hall East, Science Quad, and Student Recreation Center",
+      "schedule": "Continuous (24/7)",
+      "instructions": "Place empty bottles and cans inside. Students receive 5 campus reward points per items.",
+      "contact": "auxiliary-services@prototype-campus.edu"
+    },
+    {
+      "drive_name": "Expired Winter Clothes Drive",
+      "target_materials": ["Coats", "Blankets"],
+      "status": "EXPIRED",
+      "valid_until": "2026-02-28",
+      "collection_point": "Campus Chapel Foyer",
+      "schedule": "Ended",
+      "instructions": "Donate winter wear. (Drive has ended for the season)",
+      "contact": "eco-volunteers@prototype-campus.edu"
+    }
+  ]
+}

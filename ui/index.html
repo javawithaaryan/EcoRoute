@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRoute - Sustainability Decision Support System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <h1><span class="logo-tag">EcoRoute</span></h1>
+      <p>Agentic Sustainability Decision Support System</p>
+      <div class="small-subtitle">Helping users make better waste disposal decisions using verified local knowledge.</div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="dashboard-grid">
+      
+      <!-- Left Panel: Identify Your Packaging -->
+      <div class="card">
+        <h2 class="card-title">Identify Your Packaging</h2>
+        
+        <div class="form-group">
+          <label for="item-presets">Select a Demonstration Preset</label>
+          <select id="item-presets">
+            <option value="">-- Custom Input --</option>
+            <option value="Lays Packet">Demo 1: Lays Chips Packet (Campus Drive)</option>
+            <option value="PET Bottle">Demo 2: PET Water Bottle (Standard Curbside)</option>
+            <option value="Shampoo Sachet">Demo 3: Shampoo Sachet (Municipal Difficult Collection)</option>
+            <option value="AA Battery">Demo 4: Leaking AA Battery (Hazardous Household Waste)</option>
+            <option value="Winter Coat">Demo 5: Winter Coat donation (Expired Campaign check)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Upload Image (Optional)</label>
+          <input type="file" id="image-upload" accept="image/*">
+        </div>
+
+        <div class="form-group">
+          <label for="custom-description">Describe Item</label>
+          <textarea id="custom-description" placeholder="Describe the packaging layers, brand, and clean/dry condition..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="location-context">Location Context</label>
+          <select id="location-context">
+            <option value="campus">Prototype Campus Grounds</option>
+            <option value="municipal">Prototype Municipal Zone</option>
+          </select>
+        </div>
+
+        <button id="btn-analyze" class="btn-primary">Analyze Packaging</button>
+
+        <!-- Knowledge Status Badges -->
+        <div class="status-container">
+          <span class="status-badge green">Knowledge Connected</span>
+          <span class="status-badge">3 Documents Loaded</span>
+        </div>
+      </div>
+
+      <!-- Right Panel: Main Result -->
+      <div class="card" style="justify-content: flex-start;">
+        <h2 class="card-title">Analysis Result</h2>
+
+        <!-- Placeholder -->
+        <div id="result-placeholder" class="result-placeholder">
+          <p>Please select an item preset or write a description on the left, then click "Analyze Packaging".</p>
+        </div>
+
+        <!-- Result Card -->
+        <div id="result-card" class="result-card">
+          <div class="result-header">
+            <div class="result-title">Classification Recommendation</div>
+            <div id="res-confidence" class="confidence-indicator high">High</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <div class="field-label">Classification</div>
+              <div id="res-class" class="field-value" style="font-weight: 600;">-</div>
+            </div>
+            <div>
+              <div class="field-label">Verified Source</div>
+              <div>
+                <span id="res-source" class="source-badge">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="field-label">Reasoning</div>
+            <div id="res-why" class="field-value">-</div>
+          </div>
+
+          <!-- Visually Dominant Recommended Action Card -->
+          <div class="action-block success-border">
+            <div class="action-title">
+              <span>✓</span> Recommended Action
+            </div>
+            <div id="res-action" class="field-value" style="font-size: 1rem; font-weight: 500; color: #fff;">-</div>
+            
+            <div class="action-meta">
+              <div class="meta-item">
+                <div class="meta-label">Schedule / Frequency</div>
+                <div id="res-meta-schedule" class="meta-value">-</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Collection Location</div>
+                <div id="res-meta-location" class="meta-value">-</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collapsible AI Reasoning Summary -->
+          <div class="accordion">
+            <div class="accordion-header" id="reasoning-header">
+              <span>AI Reasoning Summary</span>
+              <span id="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content" id="reasoning-content">
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Item observed and physical details identified
+              </div>
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Packaging material structure classified
+              </div>
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Retrieved matching local knowledge guides (RAG)
+              </div>
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Evaluated option hierarchy and verified active timeline status
+              </div>
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Cross-checked recommendation facts against source documents
+              </div>
+              <div class="reasoning-step checked">
+                <span class="check-icon">✓</span> Final output formatting successfully verified
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Technical View: Retrieved Knowledge Collapsible Section -->
+    <div class="card rag-section">
+      <div class="accordion-header" id="rag-header" style="background: transparent; border: none; padding: 0;">
+        <h2 class="card-title" style="border: none; padding: 0; margin: 0; cursor: pointer; display: flex; width: 100%; justify-content: space-between; align-items: center;">
+          <span>Technical View: Retrieved Knowledge Base</span>
+          <span id="rag-arrow">▼</span>
+        </h2>
+      </div>
+      
+      <div class="accordion-content" id="rag-content" style="border-top: none; padding-top: 1rem;">
+        <div class="rag-grid">
+          
+          <!-- Campus Guide Card -->
+          <div class="rag-card">
+            <div class="rag-card-header">Prototype Campus Sustainability Guide (2026)</div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Status</div>
+              <div class="rag-detail-value">Active (through June 30, 2026)</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Collection Point</div>
+              <div class="rag-detail-value">Student Sustainability Hub, Room 102</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Accepted Material</div>
+              <div class="rag-detail-value">Chip packets, Candy wrappers, Biscuit wrappers, Laminated pouches</div>
+            </div>
+          </div>
+
+          <!-- Brand Takeback Card -->
+          <div class="rag-card">
+            <div class="rag-card-header">National Brand Take-Back Directory (2026)</div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Eligible Brands</div>
+              <div class="rag-detail-value">PureGlow Cosmetics, CrunchTime Foods</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Drop-off Point</div>
+              <div class="rag-detail-value">PureGlow retail outlet Customer Service Desk / Co-ops</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Incentives</div>
+              <div class="rag-detail-value">10% discount coupon / online Eco-points</div>
+            </div>
+          </div>
+
+          <!-- Municipal Guide Card -->
+          <div class="rag-card">
+            <div class="rag-card-header">Prototype Municipal Zone Guidelines (2026)</div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Last Updated</div>
+              <div class="rag-detail-value">January 2026</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Standard Recycling Bin</div>
+              <div class="rag-detail-value">Blue Bin (PET bottles, Glass, Cans, Cardboard)</div>
+            </div>
+            <div class="rag-detail">
+              <div class="rag-detail-label">Difficult Dry Waste Bin</div>
+              <div class="rag-detail-value">Yellow Bin (Flexible Wrappers, Sachets) - Wednesday Collection</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>EcoRoute Prototype | Supporting SDG 12 Responsible Consumption and Production & SDG 11 Sustainable Cities</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

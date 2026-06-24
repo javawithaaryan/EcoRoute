@@ -1,0 +1,40 @@
+{
+  "source_name": "Prototype Municipal Zone Waste Guidelines (2026)",
+  "authority": "Prototype Municipal Zone Waste Management Department",
+  "last_updated": "2026-01-15",
+  "jurisdiction": "Prototype Municipal Zone",
+  "guidelines": [
+    {
+      "material_type": "Standard Recyclable",
+      "items": ["PET Bottles", "Glass Bottles", "Clean Cardboard", "Paper Packaging", "Aluminium Cans"],
+      "disposal_channel": "Blue Dry Waste Bin",
+      "instructions": "Rinse containers to remove organic residue. Flatten boxes to conserve bin space. Keep separate from wet organic waste.",
+      "accepted": true,
+      "collection_schedule": "Every Tuesday and Friday morning"
+    },
+    {
+      "material_type": "Multi-layer Plastic",
+      "items": ["Chips packets", "Biscuit wrappers", "Shampoo sachets", "Soap wrappers", "Laminated pouches"],
+      "disposal_channel": "Yellow Non-Recyclable Dry Waste Bin",
+      "instructions": "This bin is for dry flexible packaging that standard sorters cannot recycle. The municipality sends these to cement plants for energy recovery. Keep dry.",
+      "accepted": true,
+      "collection_schedule": "Every Wednesday morning"
+    },
+    {
+      "material_type": "Hazardous Waste",
+      "items": ["Batteries", "Electronics", "Chemical containers", "Spray cans", "LED bulbs"],
+      "disposal_channel": "Red E-Waste/Hazardous Bin",
+      "instructions": "Place in sealed bags. Hand over at the ward-level hazardous waste collection point. Do not mix with normal trash.",
+      "accepted": true,
+      "collection_schedule": "First Sunday of every month (9:00 AM - 12:00 PM)"
+    },
+    {
+      "material_type": "Medical Packaging",
+      "items": ["Medicine blister packs", "Syringe casings", "Empty ointment tubes"],
+      "disposal_channel": "Red E-Waste/Hazardous Bin",
+      "instructions": "Take to participating community health centers or pharmacy disposal boxes. Do not place in dry or wet bins.",
+      "accepted": true,
+      "collection_schedule": "Pharmacy operating hours"
+    }
+  ]
+}
